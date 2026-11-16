@@ -1,0 +1,159 @@
+* { box-sizing: border-box; }
+:root { --orange: #ff6b00; --blue: #168cff; --page: #050505; --panel: #171717; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 16px 42px;
+  background: #000;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.page { width: min(100%, 700px); margin: 0 auto; }
+h1 {
+  margin: 0 0 22px;
+  color: #8dbdff;
+  font-size: clamp(25px, 4.5vw, 36px);
+  line-height: 1.2;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(60, 140, 255, .5);
+}
+.loader-list {
+  height: min(78vh, 920px);
+  min-height: 520px;
+  overflow-y: auto;
+  padding: 26px;
+  border: 3px solid var(--blue);
+  background: #101010;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  scrollbar-color: #555 #151515;
+  scrollbar-width: thin;
+}
+.loader-card {
+  min-height: 310px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid #292929;
+  border-radius: 24px;
+  background: #191919;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.015);
+}
+.preview {
+  min-width: 0;
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+.code {
+  min-width: 0;
+  padding: 17px 18px 20px;
+  border-left: 1px solid #282828;
+  background: #191919;
+  display: flex;
+  flex-direction: column;
+}
+.code-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.copy {
+  padding: 5px 8px;
+  border: 1px solid #383838;
+  border-radius: 5px;
+  background: #222;
+  color: #aaa;
+  font-size: 10px;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.copy:hover { color: #fff; border-color: var(--orange); }
+pre {
+  margin: 0;
+  overflow: auto;
+  color: #42d68a;
+  font: 11px/1.7 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  scrollbar-width: thin;
+}
+.loader { width: 80px; height: 80px; background: var(--orange); }
+.loader1 { background: transparent; border: 5px solid var(--orange); animation: rotateSquare 1s linear infinite; }
+@keyframes rotateSquare { to { transform: rotate(360deg); } }
+.loader2 { animation: pulseSquare 1s infinite; }
+@keyframes pulseSquare {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+.loader3 { animation: flipSquare 1.5s infinite; }
+@keyframes flipSquare {
+  0% { transform: perspective(100px) rotateX(0); }
+  50% { transform: perspective(100px) rotateX(180deg); }
+  100% { transform: perspective(100px) rotateX(360deg); }
+}
+.loader4 { background: transparent; border: 6px solid #333; border-top-color: var(--orange); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader5 { width: 70px; height: 70px; animation: bounce .8s infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-35px); }
+}
+.loader6 { background: transparent; border: 5px solid var(--orange); animation: expandSquare 1.5s infinite; }
+@keyframes expandSquare {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.loader7 { animation: morphSquare 1.2s infinite ease-in-out; }
+@keyframes morphSquare {
+  0%, 100% { border-radius: 0; transform: rotate(0deg); }
+  50% { border-radius: 25px; transform: rotate(180deg); }
+}
+.grid-loader { display: grid; grid-template-columns: repeat(2, 22px); gap: 8px; }
+.grid-loader span { width: 22px; height: 22px; background: var(--orange); animation: gridPulse 1s infinite; }
+.grid-loader span:nth-child(2) { animation-delay: .15s; }
+.grid-loader span:nth-child(3) { animation-delay: .3s; }
+.grid-loader span:nth-child(4) { animation-delay: .45s; }
+@keyframes gridPulse {
+  from { transform: scale(.5); opacity: .3; }
+  to { transform: scale(1); opacity: 1; }
+}
+.orbit { width: 180px; height: 180px; border: 2px dashed #333; border-radius: 50%; position: relative; }
+.orbit-square {
+  width: 22px; height: 22px; background: var(--orange);
+  position: absolute; top: -10px; left: 48px;
+  animation: orbitRotate 2s linear infinite;
+}
+@keyframes orbitRotate { to { transform: rotate(360deg); } }
+.loader10 { animation: foldCube 1.5s infinite; transform-style: preserve-3d; }
+@keyframes foldCube {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+.loader-card:hover { border-color: #7d3d18; box-shadow: 0 0 18px rgba(255,107,0,.12); }
+.preview:hover .loader,
+.preview:hover .grid-loader span,
+.preview:hover .orbit-square { animation-play-state: paused; }
+.hint { margin: 14px 2px 0; color: #858585; font-size: 12px; text-align: center; }
+@media (max-width: 560px) {
+  body { padding: 22px 10px 32px; }
+  .loader-list { height: 78vh; min-height: 450px; padding: 12px; gap: 18px; }
+  .loader-card { grid-template-columns: 1fr; min-height: 0; }
+  .preview { min-height: 190px; }
+  .code { border-left: 0; border-top: 1px solid #282828; padding: 15px; }
+  .code-title { margin-bottom: 10px; }
+  pre { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}

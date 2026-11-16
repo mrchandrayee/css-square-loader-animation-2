@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>CSS Square Loader Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>CSS Square Loader Animation</h1>
+    <section class="loader-list" aria-label="CSS square loader examples">
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader1"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader1 {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #ff6b00;
+  animation: rotateSquare 1s linear infinite;
+}
+
+@keyframes rotateSquare {
+  to {
+    transform: rotate(360deg);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader2"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader2 {
+  width: 80px;
+  height: 80px;
+  background: #ff6b00;
+  animation: pulseSquare 1s infinite;
+}
+
+@keyframes pulseSquare {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader3"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader3 {
+  width: 80px;
+  height: 80px;
+  background: #ff6b00;
+  animation: flipSquare 1.5s infinite;
+}
+
+@keyframes flipSquare {
+  0% {
+    transform: perspective(100px) rotateX(0);
+  }
+  50% {
+    transform: perspective(100px) rotateX(180deg);
+  }
+  100% {
+    transform: perspective(100px) rotateX(360deg);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader4"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader4 {
+  width: 80px;
+  height: 80px;
+  border: 6px solid #333;
+  border-top-color: #ff6b00;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader5"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader5 {
+  width: 70px;
+  height: 70px;
+  background: #ff6b00;
+  animation: bounce .8s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader6"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader6 {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #ff6b00;
+  animation: expandSquare 1.5s infinite;
+}
+
+@keyframes expandSquare {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader7"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader7 {
+  width: 80px;
+  height: 80px;
+  background: #ff6b00;
+  animation: morphSquare 1.2s infinite ease-in-out;
+}
+
+@keyframes morphSquare {
+  0%, 100% {
+    border-radius: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-radius: 25px;
+    transform: rotate(180deg);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="grid-loader"><span></span><span></span><span></span><span></span></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.grid-loader {
+  display: grid;
+  grid-template-columns: repeat(2, 22px);
+  gap: 8px;
+}
+.grid-loader span {
+  width: 22px;
+  height: 22px;
+  background: #ff6b00;
+  animation: gridPulse 1s infinite;
+}
+.grid-loader span:nth-child(2) { animation-delay: .15s; }
+.grid-loader span:nth-child(3) { animation-delay: .3s; }
+.grid-loader span:nth-child(4) { animation-delay: .45s; }
+
+@keyframes gridPulse {
+  from {
+    transform: scale(.5);
+    opacity: .3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="orbit"><span class="orbit-square"></span></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.orbit {
+  width: 180px;
+  height: 180px;
+  border: 2px dashed #333;
+  border-radius: 50%;
+  position: relative;
+}
+.orbit-square {
+  width: 22px;
+  height: 22px;
+  background: #ff6b00;
+  position: absolute;
+  top: -10px;
+  left: 48px;
+  animation: orbitRotate 2s linear infinite;
+}
+@keyframes orbitRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}</code></pre></div>
+      </article>
+      <article class="loader-card">
+        <div class="preview"><div class="loader loader10"></div></div>
+        <div class="code"><div class="code-title">CSS CODE <button class="copy" type="button">Copy</button></div><pre><code>.loader10 {
+  width: 80px;
+  height: 80px;
+  background: #ff6b00;
+  animation: foldCube 1.5s infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes foldCube {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}</code></pre></div>
+      </article>
+    </section>
+    <p class="hint">10 square loaders · Hover a preview to pause · Copy the CSS for each animation</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
